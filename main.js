@@ -4,7 +4,7 @@
 String.prototype.filterWords = function(args){
   let temp = this;
   if(args.length) {
-    args.forEach((s) => temp = temp.replace(s,'***'));
+    args.map((s) => temp = temp.replace(s,'***'));
   }
   return temp;
 }
