@@ -1,0 +1,8 @@
+1. Explain why do we want sometimes to use setImmediate instead of using setTimeout?
+Answer: setImmediate is designed to execute a script once the current poll phase completes. And setImmediate will schedule a callback to run at check phase of the event loop after IO events' callback.
+
+2. Explin the difference between process.netxTick and setImmediate?
+Answer: process.nextTick fires immediatelyon the same phase. setImmediate fires on the following iteration or 'tick' of the event loop.
+
+3. Name 10 core modules that Node provides by default.
+Answer: assert, buffer, child_process, cluster, crypto, dgram, dns, domain, events, fs, http, https, net, os, path, punycode, querystring, readline, stream, string_decoder
