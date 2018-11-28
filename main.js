@@ -13,7 +13,7 @@ console.log("This house is nice!".filterWords(['house', 'nice']));
 
 //Promises
 //https://playcode.io
-String.prototype.filterWords = function(args){
+String.prototype.filterWords2 = function(args){
   var temp = this;
   var fetchData = function () {
     return new Promise(function (resolve, reject) {
@@ -30,3 +30,23 @@ String.prototype.filterWords = function(args){
   
   return temp;
 }
+
+//Async/Await
+String.prototype.filterWords3 = function(args){
+    var temp = this;
+    var banWord = async function (s) {
+      let promise = new Promise(function (resolve, reject) {
+        resolve();
+      });
+      try {
+        let result = await Promise.resolve(1).then(s => temp = temp.toString().replace(s,'***'));
+        //console.log(result);
+        return result;
+      } catch (error) {
+          console.log(error);
+      }
+      
+    };
+    
+    return temp;
+  }
