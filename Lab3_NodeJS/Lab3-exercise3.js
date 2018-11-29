@@ -10,6 +10,6 @@ class Gym extends EventEmitter {
 
 const gym = new Gym();
 gym.on('data', (data) => {
-    console.log('Athlete is working out. "${data}"');
+    console.log(`Athlete is working out. "${data}"`);
 });
-gym.go('my data');
+gym.go('Athlete is working out.');
