@@ -3,13 +3,15 @@ class Gym extends EventEmitter {
     constructor() {
         super();
     }
-    go(data) {
-        setInterval(data => this.emit('data', data), 1000);
+    
+    go(msg) {
+        this.msg = msg;
+        setInterval(() => this.emit('data', this.msg), 1000);
     }
 }
 
 const gym = new Gym();
-gym.on('data', (data) => {
-    console.log(`Athlete is working out. "${data}"`);
+gym.on('data', (msg) => {
+    console.log(` ${msg}`);
 });
 gym.go('Athlete is working out.');
