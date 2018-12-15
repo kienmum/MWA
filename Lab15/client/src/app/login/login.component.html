@@ -1,0 +1,28 @@
+<div class="container">
+  <h3>
+      Login
+  </h3>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate" formControlName="email">
+        <label for="email">Email</label>
+        <div class="alert alert-danger" *ngIf="(control.email.touched || control.email.dirty) && control.email.errors">
+          <span class="helper-text">not valid!</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="password" type="password" class="validate" formControlName="password">
+        <label for="password">Password</label>
+        <div class="alert alert-danger" *ngIf="(control.password.touched || control.password.dirty) && control.password.errors">
+          <span class="helper-text">required *</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button class="waves-effect waves-light btn red" [disabled]="!loginForm.valid"><i class="material-icons right">touch_app</i>Login</button>
+    </div>
+  </form>
+</div>
